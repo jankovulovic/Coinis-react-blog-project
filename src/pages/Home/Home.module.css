@@ -1,0 +1,23 @@
+.title {
+  padding-top: 6rem;
+  text-align: center;
+}
+
+.allPosts {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  gap: 3rem;
+  width: 100%;
+  padding-bottom: 10rem;
+  padding-left: 2rem;
+  padding-top: 2rem;
+}
+
+.card{
+  transition: all 0.5s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}

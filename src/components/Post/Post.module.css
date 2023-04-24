@@ -1,0 +1,24 @@
+.card {
+  width: 335px;
+  height: fit-content;
+  border: 10px solid #013a65;
+  border-radius: 20px !important;
+  font-family: "Bruno Ace SC", cursive !important;
+}
+
+.title,
+.text,
+.author,
+.btn {
+  font-family: "Bruno Ace SC", cursive !important;
+}
+.btn {
+  color: #013a65;
+  border-radius: 5px!important;
+}
+
+.btn:hover {
+  color: white;
+  background-color: #013a65!important;
+  border: #013a65!important;
+}

@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Coinis-Homework-Blog-Project/static/css/main.aa00458b.css",
+    "main.js": "/Coinis-Homework-Blog-Project/static/js/main.8e1bcd28.js",
+    "static/media/blog.jpg": "/Coinis-Homework-Blog-Project/static/media/blog.377a35411ef3ee45181f.jpg",
+    "index.html": "/Coinis-Homework-Blog-Project/index.html",
+    "main.aa00458b.css.map": "/Coinis-Homework-Blog-Project/static/css/main.aa00458b.css.map",
+    "main.8e1bcd28.js.map": "/Coinis-Homework-Blog-Project/static/js/main.8e1bcd28.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa00458b.css",
+    "static/js/main.8e1bcd28.js"
+  ]
+}
