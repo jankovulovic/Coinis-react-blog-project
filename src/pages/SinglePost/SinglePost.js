@@ -1,10 +1,11 @@
-import React from "react";
-import { AppContext } from "../../App";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
-import classes from "../SpecificPost/PostId.module.css";
 
-const PostId = () => {
+import { AppContext } from "../../App";
+
+import classes from "./SinglePost.module.css";
+
+export const SinglePost = () => {
   const { posts } = useContext(AppContext);
   const { id } = useParams();
   const post = posts.find((post) => post.id === Number(id));
@@ -32,5 +33,3 @@ const PostId = () => {
     </>
   );
 };
-
-export default PostId;

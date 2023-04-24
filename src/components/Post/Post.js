@@ -1,17 +1,19 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
+
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
+
 import classes from "../Post/Post.module.css";
 
 export const Post = ({ id, title, author, imageUrl, text }) => {
   return (
     <Card className={classes.card} sx={{ maxWidth: 345 }} key={id}>
-      <CardMedia component="img" height="240" image={imageUrl} alt={title} />
+      <CardMedia component="img" height="300" image={imageUrl} alt={title} />
       <CardContent>
         <Typography
           gutterBottom

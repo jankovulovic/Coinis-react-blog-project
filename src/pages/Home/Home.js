@@ -1,8 +1,9 @@
-import React from "react";
-import classes from "./Home.module.css";
+import React, { useContext } from "react";
+
 import { AppContext } from "../../App";
-import { useContext } from "react";
 import { Post } from "../../components/Post/Post";
+
+import classes from "./Home.module.css";
 
 export const Home = () => {
   const { posts } = useContext(AppContext);
@@ -10,7 +11,7 @@ export const Home = () => {
   return (
     <>
       <div className={classes.title}>
-        <h1>Svi postovi</h1>
+        <h1>All posts</h1>
         <div className={classes.allPosts}>
           {posts.map((item) => (
             <div className={classes.card} key={item.id} id={item.id}>

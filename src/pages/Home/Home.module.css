@@ -5,19 +5,19 @@
 
 .allPosts {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 4rem;
   width: 100%;
-  padding-bottom: 10rem;
-  padding-left: 2rem;
+  padding-bottom: 5rem;
+
   padding-top: 2rem;
 }
 
-.card{
+.card {
   transition: all 0.5s;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }

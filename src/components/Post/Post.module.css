@@ -14,11 +14,11 @@
 }
 .btn {
   color: #013a65;
-  border-radius: 5px!important;
+  border-radius: 5px !important;
 }
 
 .btn:hover {
   color: white;
-  background-color: #013a65!important;
-  border: #013a65!important;
+  background-color: #013a65 !important;
+  border: #013a65 !important;
 }

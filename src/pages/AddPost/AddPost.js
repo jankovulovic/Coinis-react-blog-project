@@ -1,21 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import classes from "../AddPost/AddPost.module.css";
-import { AppContext } from "../../App";
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 
-const AddPost = () => {
-  const navigate = useNavigate();
+import { AppContext } from "../../App";
+
+import classes from "../AddPost/AddPost.module.css";
+
+export const AddPost = () => {
   const { posts, setPosts } = useContext(AppContext);
+  const navigate = useNavigate();
 
   const schema = yup.object().shape({
     title: yup.string().required("Post Title is Required!").max(20),
-    imageUrl: yup.string().required("Your image URL is Required").url(),
-    author: yup.string().required("Please put the name of the Author.").max(20),
-    text: yup.string().max(250, "Text must be a maximum of 250 characters"),
+    imageUrl: yup.string().required("Your image URL is Required!").url(),
+    author: yup.string().required("Author name is Required!").max(20),
+    text: yup
+      .string()
+      .max(250, "Text must be a maximum of 250 characters")
+      .required("Please put content of your blog here."),
   });
 
   const {
@@ -26,7 +30,7 @@ const AddPost = () => {
     resolver: yupResolver(schema),
   });
 
-  function onSubmit(data) {
+  function onSubmit(formData) {
     fetch("https://jsonblob.com/api/jsonBlob", {
       method: "post",
       headers: {
@@ -34,24 +38,22 @@ const AddPost = () => {
         Accept: "application/json",
         redirect: "follow",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(formData),
     })
       .then(function (response) {
         if (response.status === 201) {
-          // alert("Blog Uspjesno Dodat!!!");
-          const newPostsContext = [...posts, data];
-          console.log(newPostsContext.length);
+          const newPostsContext = [...posts, formData];
           newPostsContext[newPostsContext.length - 1].id =
             newPostsContext.length;
-          console.log(newPostsContext);
           setPosts(newPostsContext);
           navigate("/");
         } else {
-          alert("Post nije dodat.");
+          alert("Post unsuccesful,Try again.");
         }
       })
       .catch(function (error) {
         console.log(error);
+        alert("Post unsuccesful,Try again.");
       });
   }
 
@@ -69,12 +71,10 @@ const AddPost = () => {
         <p>{errors.imageUrl?.message}</p>
         <input type="text" placeholder="Author..." {...register("author")} />
         <p>{errors.author?.message}</p>
-        <textarea placeholder="Text" {...register("text")} />
+        <textarea placeholder="Content..." {...register("text")} />
         <p>{errors.text?.message}</p>
-        <button type="submit">Dodaj post</button>
+        <button type="submit">Add Post</button>
       </form>
     </>
   );
 };
-
-export default AddPost;

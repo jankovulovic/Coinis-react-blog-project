@@ -9,7 +9,8 @@
   width: 30%;
   margin: 6rem auto 0 auto;
 }
-.form input,.form textarea {
+.form input,
+.form textarea {
   height: 3rem;
   text-align: center;
 }
@@ -39,4 +40,8 @@
   color: #013a65;
   background-color: white;
   border: 3px solid #013a65;
+}
+
+.form p {
+  color: red;
 }
