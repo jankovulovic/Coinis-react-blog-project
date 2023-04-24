@@ -18,11 +18,15 @@ function App() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    try {
-    } catch (error) {}
-    axios.get(baseURL).then((response) => {
-      setPosts(response.data);
-    });
+    async function fetchData() {
+      try {
+        const response = await axios.get(baseURL);
+        setPosts(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+    fetchData();
   }, []);
 
   return (
